@@ -1,0 +1,65 @@
+---
+sidebar_position: 2
+---
+
+# Completion
+
+Given a chat conversation, the model will return a chat completion response.
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="ts" label="TypeScript">
+
+```ts
+import { Blocktool } from 'blocktool';
+const blocktool = new Blocktool('<YOUR API KEY>');
+
+async function main() {
+  prompt = {
+    messages: [
+      {role: "system", content: "You are a helpful assistant."},
+      {role: "user", content: "What is the capital of Paris?"},
+    ],
+  };
+  completion = await blocktool.completion({
+    model: "claude-v1.2",
+    max_tokens: 64,
+    prompt: prompt,
+    temperature: 0.2,
+  });
+  console.log(`assistant: ${completion.text}`);
+}
+```
+
+</TabItem>
+<TabItem value="py" label="Python">
+
+```py
+import asyncio
+from blocktool import Blocktool, Prompt
+
+blocktool = Blocktool('<YOUR API KEY>')
+
+async def main():
+    prompt = Prompt(
+        messages = [
+            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "user", "content": "What is the capital of Paris?"},
+        ]
+    )
+    completion = await blocktool.completion(
+        model="claude-v1.2",
+        max_tokens=64,
+        prompt=prompt,
+        temperature=0.2,
+    )
+    print(f"assitant: {completion.text}")
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+</TabItem>
+</Tabs>

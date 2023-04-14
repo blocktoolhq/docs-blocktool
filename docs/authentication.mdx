@@ -1,0 +1,33 @@
+---
+sidebar_position: 1
+---
+
+# Authentication
+
+The Blocktool API relies on API keys for request authentication, which can be managed through the Blocktool [Settings page](https://app.blocktool.com/settings).
+
+Ensure your API keys remain secure, avoiding public exposure on platforms like GitHub or in client-side code.
+
+To use an API key, set it in Blocktool's initial configuration:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="ts" label="TypeScript">
+
+```ts
+import { Blocktool } from 'blocktool';
+const blocktool = new Blocktool('<YOUR API KEY>');
+```
+
+</TabItem>
+<TabItem value="py" label="Python">
+
+```py
+from blocktool import Blocktool
+blocktool = Blocktool('<YOUR API KEY>')
+```
+
+</TabItem>
+</Tabs>
