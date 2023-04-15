@@ -86,7 +86,7 @@ const config = {
             items: [
               {
                 label: 'Docs',
-                to: '/docs/auth',
+                to: '/docs/authentication',
               },
             ],
           },
